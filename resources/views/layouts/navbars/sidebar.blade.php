@@ -5,8 +5,8 @@
       Tip 2: you can also add an image using data-image tag
   -->
   <div class="logo">
-    <a href="https://creative-tim.com/" class="simple-text logo-normal">
-      {{ __('Creative Tim') }}
+    <a href="#" class="simple-text logo-normal">
+      {{ __('Dash') }}
     </a>
   </div>
   <div class="sidebar-wrapper">
@@ -20,7 +20,7 @@
       <li class="nav-item {{ ($activePage == 'profile' || $activePage == 'user-management') ? ' active' : '' }}">
         <a class="nav-link" data-toggle="collapse" href="#laravelExample" aria-expanded="true">
           <i><img style="width:25px" src="{{ asset('material') }}/img/laravel.svg"></i>
-          <p>{{ __('Laravel Examples') }}
+          <p>{{ __('Examples') }}
             <b class="caret"></b>
           </p>
         </a>
@@ -44,7 +44,7 @@
       <li class="nav-item{{ $activePage == 'table' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('table') }}">
           <i class="material-icons">content_paste</i>
-            <p>{{ __('Table List') }}</p>
+            <p>{{ __('Projects List') }}</p>
         </a>
       </li>
       <li class="nav-item{{ $activePage == 'typography' ? ' active' : '' }}">
@@ -69,18 +69,6 @@
         <a class="nav-link" href="{{ route('notifications') }}">
           <i class="material-icons">notifications</i>
           <p>{{ __('Notifications') }}</p>
-        </a>
-      </li>
-      <li class="nav-item{{ $activePage == 'language' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('language') }}">
-          <i class="material-icons">language</i>
-          <p>{{ __('RTL Support') }}</p>
-        </a>
-      </li>
-      <li class="nav-item active-pro{{ $activePage == 'upgrade' ? ' active' : '' }} bg-danger">
-        <a class="nav-link text-white" href="{{ route('upgrade') }}">
-          <i class="material-icons">unarchive</i>
-          <p>{{ __('Upgrade to PRO') }}</p>
         </a>
       </li>
     </ul>

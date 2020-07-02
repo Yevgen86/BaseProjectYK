@@ -3,7 +3,18 @@
 @section('content')
   <div class="content">
     <div class="container-fluid">
-      <div class="row">
+        <p class="lead">A sample chart showing average rewards and daily rate of contributions.</p>
+        <div class="container welcome-div">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="ct-chart-line ct-perfect-fourth"></div>
+                </div>
+                <div class="col-md-6">
+                    <div class="ct-chart-bar ct-perfect-fourth"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
         <div class="col-lg-3 col-md-6 col-sm-6">
           <div class="card card-stats">
             <div class="card-header card-header-warning card-header-icon">
@@ -93,7 +104,8 @@
         <div class="col-md-4">
           <div class="card card-chart">
             <div class="card-header card-header-warning">
-              <div class="ct-chart" id="websiteViewsChart"></div>
+{{--              <div class="ct-chart" id="websiteViewsChart"></div>--}}
+
             </div>
             <div class="card-body">
               <h4 class="card-title">Email Subscriptions</h4>
@@ -123,6 +135,7 @@
           </div>
         </div>
       </div>
+
       <div class="row">
         <div class="col-lg-6 col-md-12">
           <div class="card">
@@ -133,7 +146,7 @@
                   <ul class="nav nav-tabs" data-tabs="tabs">
                     <li class="nav-item">
                       <a class="nav-link active" href="#profile" data-toggle="tab">
-                        <i class="material-icons">bug_report</i> Bugs
+                        <i class="material-icons">project</i> My Projects
                         <div class="ripple-container"></div>
                       </a>
                     </li>
@@ -153,6 +166,7 @@
                 </div>
               </div>
             </div>
+
             <div class="card-body">
               <div class="tab-content">
                 <div class="tab-pane active" id="profile">
@@ -295,7 +309,9 @@
                     </tbody>
                   </table>
                 </div>
+
                 <div class="tab-pane" id="settings">
+
                   <table class="table">
                     <tbody>
                       <tr>
@@ -364,24 +380,31 @@
                       </tr>
                     </tbody>
                   </table>
+
                 </div>
               </div>
             </div>
           </div>
         </div>
+    {{--            --}}
+        {{--          --}}
         <div class="col-lg-6 col-md-12">
           <div class="card">
             <div class="card-header card-header-warning">
               <h4 class="card-title">Employees Stats</h4>
               <p class="card-category">New employees on 15th September, 2016</p>
             </div>
+
             <div class="card-body table-responsive">
+
               <table class="table table-hover">
                 <thead class="text-warning">
-                  <th>ID</th>
-                  <th>Name</th>
-                  <th>Salary</th>
-                  <th>Country</th>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Salary</th>
+                        <th>Country</th>
+                    </tr>
                 </thead>
                 <tbody>
                   <tr>
@@ -410,6 +433,7 @@
                   </tr>
                 </tbody>
               </table>
+
             </div>
           </div>
         </div>
@@ -421,7 +445,59 @@
 @push('js')
   <script>
     $(document).ready(function() {
-      // Javascript method's body can be found in assets/js/demos.js
+        // <script type="text/javascript">
+        // Our labels and three data series
+        let data = {
+            labels: ['Week1', 'Week2', 'Week3', 'Week4', 'Week5', 'Week6'], // lables of the chart
+            series: [ // the data series in other words the lines
+                [50, 41, 103, 170, 151, 250], //first data series
+                [93, 29, 91, 15, 14, 6], //second data series
+                [2, 1, 9, 4, 2, 10] //third data series
+            ]
+        };
+        // We are setting a few options for our chart and override the defaults
+        let options = {
+            // It will not draw the line chart points
+            showPoint: false,
+            // Disables line smoothing
+            lineSmooth: false,
+            // X-Axis specific configuration
+            axisX: {
+                // We can disable the grid for this axis
+                showGrid: false,
+                // and also don't show the label
+                showLabel: false
+            },
+            // Y-Axis specific configuration
+            axisY: {
+                // Lets offset the chart a bit from the labels
+                offset: 60,
+                // The label interpolation function enables us to modify our values
+                // used for the labels on each axis.
+                labelInterpolationFnc: function(value) {
+                    return '$' + value;
+                }
+            }
+        };
+        // We Pass our configuration as third parameter to the chart function for it work
+        new Chartist.Line('.ct-chart-line', data, options);
+
+        new Chartist.Bar('.ct-chart-bar', {
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            series: [
+                [5, 4, 3, 7, 5, 10, 3]
+            ]
+        }, {
+            axisX: {
+                // On the x-axis start means top and end means bottom
+                position: 'start'
+            },
+            axisY: {
+                // On the y-axis start means left and end means right
+                position: 'end'
+            }
+        });
+    // // Javascript method's body can be found in assets/js/demos.js
       md.initDashboardPageCharts();
     });
   </script>

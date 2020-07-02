@@ -16,7 +16,7 @@
  */
 
 (function() {
-  isWindows = navigator.platform.indexOf('Win') > -1 ? true : false;
+    let isWindows = navigator.platform.indexOf('Win') > -1 ? true : false;
 
   if (isWindows) {
     // if we are on windows OS we activate the perfectScrollbar function
@@ -42,12 +42,12 @@ var mobile_menu_visible = 0,
   toggle_initialized = false,
   bootstrap_nav_initialized = false;
 
-var seq = 0,
-  delays = 80,
-  durations = 500;
-var seq2 = 0,
-  delays2 = 80,
-  durations2 = 500;
+var   seq = 0,
+      delays = 80,
+      durations = 500;
+var   seq2 = 0,
+      delays2 = 80,
+      durations2 = 500;
 
 $(document).ready(function() {
 
@@ -88,7 +88,7 @@ $(document).ready(function() {
 $(document).on('click', '.navbar-toggler', function() {
   $toggle = $(this);
 
-  if (mobile_menu_visible == 1) {
+  if (mobile_menu_visible === 1) {
     $('html').removeClass('nav-open');
 
     $('.close-layer').remove();
@@ -165,13 +165,13 @@ md = {
   },
 
   showNotification: function(from, align) {
-    type = ['', 'info', 'danger', 'success', 'warning', 'rose', 'primary'];
+      let type = ['', 'info', 'danger', 'success', 'warning', 'rose', 'primary'];
 
-    color = Math.floor((Math.random() * 6) + 1);
+      let color = Math.floor((Math.random() * 6) + 1);
 
     $.notify({
       icon: "add_alert",
-      message: "Welcome to <b>Material Dashboard Pro</b> - a beautiful admin panel for every web developer."
+      message: "Welcome to <b>Material Dashboard</b> - a beautiful admin panel for every web developer."
 
     }, {
       type: type[color],
@@ -183,11 +183,11 @@ md = {
     });
   },
 
-  initDocumentationCharts: function() {
-    if ($('#dailySalesChart').length != 0 && $('#websiteViewsChart').length != 0) {
+  /*initDocumentationCharts: function() {
+    if ($('#dailySalesChart').length != 0 && $('#websiteViewsChart').length != 0) {*/
       /* ----------==========     Daily Sales Chart initialization For Documentation    ==========---------- */
 
-      dataDailySalesChart = {
+      /*dataDailySalesChart = {
         labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
         series: [
           [12, 17, 7, 17, 23, 18, 38]
@@ -212,7 +212,7 @@ md = {
 
       var animationHeaderChart = new Chartist.Line('#websiteViewsChart', dataDailySalesChart, optionsDailySalesChart);
     }
-  },
+  // }*/
 
 
   initFormExtendedDatetimepickers: function() {
@@ -258,53 +258,27 @@ md = {
         today: 'fa fa-screenshot',
         clear: 'fa fa-trash',
         close: 'fa fa-remove'
-
-      }
-    });
-  },
-
-
-  initSliders: function() {
-    // Sliders for demo purpose
-    var slider = document.getElementById('sliderRegular');
-
-    noUiSlider.create(slider, {
-      start: 40,
-      connect: [true, false],
-      range: {
-        min: 0,
-        max: 100
-      }
-    });
-
-    var slider2 = document.getElementById('sliderDouble');
-
-    noUiSlider.create(slider2, {
-      start: [20, 60],
-      connect: true,
-      range: {
-        min: 0,
-        max: 100
       }
     });
   },
 
   initSidebarsCheck: function() {
     if ($(window).width() <= 991) {
-      if ($sidebar.length != 0) {
+      if ($sidebar.length !== 0) {
         md.initRightMenu();
       }
     }
   },
 
   checkFullPageBackgroundImage: function() {
-    $page = $('.full-page');
-    image_src = $page.data('image');
+      let page = $('.full-page');
+      let image_src = page.data('image');
 
-    if (image_src !== undefined) {
-      image_container = '<div class="full-page-background" style="background-image: url(' + image_src + ') "/>'
-      $page.append(image_container);
-    }
+      if (image_src !== undefined) {
+          let image_container = '<div class="full-page-background" ' +
+              'style="background-image: url(' + image_src + ') ">'
+          page.append(image_container);
+      }
   },
 
   initDashboardPageCharts: function() {
@@ -550,7 +524,7 @@ md = {
     $calendar.fullCalendar({
       viewRender: function(view, element) {
         // We make sure that we activate the perfect scrollbar when the view isn't on Month
-        if (view.name != 'month') {
+        if (view.name !== 'month') {
           $(element).find('.fc-scroller').perfectScrollbar();
         }
       },

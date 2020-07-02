@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,9 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
@@ -44,15 +42,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('notifications', function () {
 		return view('pages.notifications');
 	})->name('notifications');
-
-	Route::get('rtl-support', function () {
-		return view('pages.language');
-	})->name('language');
-
-	Route::get('upgrade', function () {
-		return view('pages.upgrade');
-	})->name('upgrade');
-});
+	});
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::resource('user', 'UserController', ['except' => ['show']]);

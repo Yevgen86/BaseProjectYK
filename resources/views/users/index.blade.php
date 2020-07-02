@@ -40,7 +40,7 @@
     <meta property="og:image" content="https://s3.amazonaws.com/creativetim_bucket/products/154/opt_md_laravel_thumbnail.jpg"/>
     <meta property="og:description" content="Material Dashboard Laravel is a Free Material Bootstrap Admin Preset for Laravel with a fresh, new design inspired by Google's Material Design." />
     <meta property="og:site_name" content="Creative Tim" />
-    
+
     <title>{{ __('Material Dashboard Laravel - Free Frontend Preset for Laravel') }}</title>
     <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('material') }}/img/apple-icon.png">
     <link rel="icon" type="image/png" href="{{ asset('material') }}/img/favicon.png">
@@ -50,8 +50,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <!-- CSS Files -->
     <link href="{{ asset('material') }}/css/material-dashboard.css?v=2.1.3" rel="stylesheet" />
-    <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link href="{{ asset('material') }}/demo/demo.css" rel="stylesheet" />
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -62,22 +60,18 @@
 
     </head>
   <body class="clickup-chrome-ext_installed">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
               <input type="hidden" name="_token" value="NKN81BvuQSzEbJlULUVrTDRewUlcAIJhPbOwli18">            </form>
           <div class="wrapper ">
             <div class="sidebar" data-color="orange" data-background-color="white" data-image="{{ asset('material') }}/img/sidebar-1.jpg">
               <!--
                   Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
-            
+
                   Tip 2: you can also add an image using data-image tag
               -->
               <div class="logo">
-                <a href="https://creative-tim.com/" class="simple-text logo-normal">
-                  {{ __('Creative Tim') }}
+                <a href="DCF" class="simple-text logo-normal">
+                  {{ __('DigitalCodingFactory') }}
                 </a>
               </div>
               <div class="sidebar-wrapper">
@@ -91,7 +85,7 @@
                   <li class="nav-item">
                     <a class="nav-link" data-toggle="collapse" href="#laravelExample" aria-expanded="true">
                       <i><img style="width:25px" src="{{ asset('material') }}/img/laravel.svg"></i>
-                      <p>{{ __('Laravel Examples') }}
+                      <p>{{ __('Examples') }}
                         <b class="caret"></b>
                       </p>
                     </a>
@@ -165,7 +159,7 @@
     <a class="navbar-brand" href="#">User Management</a>
   </div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-    
+
   <span class="sr-only">Toggle navigation</span>
   <span class="navbar-toggler-icon icon-bar"></span>
   <span class="navbar-toggler-icon icon-bar"></span>
@@ -195,7 +189,7 @@
           <i class="material-icons">notifications</i>
           <span class="notification">5</span>
           <p class="d-lg-none d-md-block">
-            Some Actions
+            Actions
           </p>
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
@@ -215,7 +209,7 @@
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
           <a class="dropdown-item" href="{{ route('profile.edit') }}">Profile</a>
-          <a class="dropdown-item" href="#">Settings</a>
+{{--          <a class="dropdown-item" href="#">Settings</a>--}}
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Log out</a>
         </div>
@@ -232,7 +226,7 @@
           <div class="card">
             <div class="card-header card-header-primary">
               <h4 class="card-title ">Users</h4>
-              <p class="card-category"> Here you can manage users</p>
+              <p class="card-category"> Manage Users here</p>
             </div>
             <div class="card-body">
                               <div class="row">
@@ -292,22 +286,22 @@
   <nav class="float-left">
     <ul>
       <li>
-        <a href="https://www.creative-tim.com">
-            Creative Tim
+        <a href="#">
+            DigitalCodingFactory
         </a>
       </li>
       <li>
-        <a href="https://creative-tim.com/presentation">
+        <a href="#">
             About Us
         </a>
       </li>
       <li>
-        <a href="http://blog.creative-tim.com">
+        <a href="#">
             Blog
         </a>
       </li>
       <li>
-        <a href="https://www.creative-tim.com/license">
+        <a href="#">
             Licenses
         </a>
       </li>
@@ -318,13 +312,13 @@
     <script>
       document.write(new Date().getFullYear())
     </script>, made with <i class="material-icons">favorite</i> by
-    <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> and <a href="https://www.updivision.com" target="_blank">UPDIVISION</a> for a better web.
+    <a href="https://www.creative-tim.com" target="_blank">DCF-Team</a> for a better web.
   </div>
 </div>
 </footer>
 </div>
 </div>
-                      
+
       <div class="fixed-plugin">
         <div class="dropdown show-dropdown">
           <a href="#" data-toggle="dropdown">
@@ -366,9 +360,9 @@
                 <img src="{{ asset('material') }}/img/sidebar-4.jpg" alt="">
               </a>
             </li>
-            <li class="button-container">
+ {{--           <li class="button-container">
               <a href="https://www.creative-tim.com/product/material-dashboard-laravel" target="_blank" class="btn btn-primary btn-block">Free Download</a>
-            </li>
+            </li>--}}
             <!-- <li class="header-title">Want more components?</li>
                 <li class="button-container">
                     <a href="https://www.creative-tim.com/product/material-dashboard-pro" target="_blank" class="btn btn-warning btn-block">
@@ -376,17 +370,19 @@
                     </a>
                 </li> -->
             <li class="button-container">
-              <a href="https://material-dashboard-laravel.creative-tim.com/docs/getting-started/laravel-setup.html" target="_blank" class="btn btn-default btn-block">
+              <a href="https://material-dashboard-laravel.creative-tim.com/docs/getting-started/laravel-setup.html"
+                 target="_blank"
+                 class="btn btn-default btn-block">
                 View Documentation
               </a>
             </li>
-            <li class="button-container">
-              <a href="https://www.creative-tim.com/product/material-dashboard-pro-laravel" target="_blank" class="btn btn-danger btn-block btn-round">
-                Upgrade to PRO
-              </a>
-            </li>
             <li class="button-container github-star">
-              <a class="github-button" href="https://github.com/creativetimofficial/material-dashboard-laravel" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star ntkme/github-buttons on GitHub">Star</a>
+              <a class="github-button"
+                 href="https://github.com/creativetimofficial/material-dashboard-laravel"
+                 data-icon="octicon-star"
+                 data-size="large"
+                 data-show-count="true"
+                 aria-label="Star ntkme/github-buttons on GitHub">Star</a>
             </li>
             <li class="header-title">Thank you for 95 shares!</li>
             <li class="button-container text-center">
